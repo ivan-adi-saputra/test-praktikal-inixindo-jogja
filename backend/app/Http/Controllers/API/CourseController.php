@@ -53,8 +53,10 @@ class CourseController extends Controller
                 return $this->handleResponse('Course already exists', 400);
             }
 
+            $user = $request->attributes->get('user');
+
             $course = Course::create([
-                'user_id' => 1,
+                'user_id' => $user->id,
                 'trainer_id' => 1,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
