@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Enrollment extends Model
 {
-    protected $table = 'enrollment';
+    use SoftDeletes;
+
+    protected $table = 'enrollments';
     protected $guarded = ['id'];
 
     public function user(): BelongsTo

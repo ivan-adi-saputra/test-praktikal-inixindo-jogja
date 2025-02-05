@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CourseController;
+use App\Http\Controllers\API\EnrollmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,5 @@ Route::get('/', function () {
 
 Route::prefix('v1')->group(function () {
     Route::resource('/course', CourseController::class);
+    Route::resource('/enrollment', EnrollmentController::class);
 });
