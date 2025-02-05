@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'start_date' => 'required|date_format:Y-m-d H:i:s',
             'end_date' => 'required|date_format:Y-m-d H:i:s|after:start_date',
-            'status' => 'nullable|in:active|active,not active',
+            'status' => 'nullable|in:active,not active',
             'title' => 'required|string|max:255',
             'category' => 'required|string|max:255',
             'description' => 'nullable',
