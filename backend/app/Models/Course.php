@@ -18,4 +18,14 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function trainer(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'trainer_id', 'id');
+    }
+
+    public function course_contents(): HasMany
+    {
+        return $this->hasMany(CourseContent::class);
+    }
 }
