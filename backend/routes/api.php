@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CourseController;
 use App\Http\Controllers\API\EnrollmentController;
+use App\Http\Controllers\API\ProgressController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,6 @@ Route::prefix('v1')->group(function () {
     Route::middleware([AuthMiddleware::class])->group(function () {
         Route::resource('/course', CourseController::class);
         Route::resource('/enrollment', EnrollmentController::class);
+        Route::resource('/progress', ProgressController::class);
     });
 });
